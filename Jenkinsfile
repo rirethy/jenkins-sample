@@ -17,5 +17,10 @@ node () {
 			} 
  		} 
 	}
+	stage('Quality check') {
+          withSonarQubeEnv('Sonar') {
+            bat "mvn sonar:sonar"
+          }
+        } 
 }
 }
